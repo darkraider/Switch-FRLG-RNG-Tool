@@ -50,6 +50,11 @@ You will need to install the following libraries via the Arduino Library Manager
 6. **OTA Flashing (Future Updates):**
    Once initially installed via USB, you no longer need a cable to update the code. In the Arduino IDE, go to `Tools > Port` and select the ESP32 under **Network Ports**.
 
+7. **Plug into Switch 1/2:**
+   You can attempt to plug it in like I have. I plugged the ESP32 into the dock so that it is always ready when I want to use it. It fits quite well inside the Switch 2 dock.
+
+   ![Installation Photo 1](images/InstallationLocation.jpg)
+   ![Installation Photo 2](images/InsideDock.jpg)
 ---
 
 ##  How to Use the UI

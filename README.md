@@ -98,7 +98,7 @@ Below the timeline is a live virtual gamepad. It uses WebSockets to control the 
   As far as I can tell, this is mostly the Switch/FRLG's fault. Once calibrated, the ESP32 will normally miss by one frame one way or another, even if it presses the buttons at the exact same time every time. Just keep hitting 'Restart' until it finally gets everything right in one run.
 
    The ESP32 is emulating a Switch 1 controller, so it's limited to a 125Hz polling rate from USB. With bad timing, you can miss a +- 1 frame each time from just that.
-* **I docked/undocked my Switch, and it's suddenly not hitting the same frame anymore!**
+* **"I docked/undocked my Switch, and it's suddenly not hitting the same frame anymore!"**
   Docking the Switch 1/2 seems to cause a change in loading the game, probably due to the processor being clocked down when in handheld. Unless you want to change your calibration all the time, always hunt with the same configuration, or have a profile for both docked/undocked.  
 * **The Web UI is blank/white on load:** Your local storage JSON may have been corrupted. The code features an auto-recovery system, but if it fails, clear your browser's site data/cache for the ESP32's IP address and refresh.
 * **"COMM ERROR" / WebSocket Disconnected:**

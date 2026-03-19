@@ -61,18 +61,18 @@ You will need to install the following libraries via the Arduino Library Manager
 
 ### 1. Macro Timeline
 The timeline is broken down into two types of blocks:
-* **Standard Actions:** Simple linear commands (`Delay`, `Press`, `Hold`, `Mash`). Useful for non-precise actions, moving to a location for example.
-* **Calibrated Phases:** Advanced blocks used for precise RNG targeting. They allow you to define a target frame/time, run "Background Setup Tasks" while the timer counts down, and fire a "Final Trigger" on the exact target microsecond. Most of your blocks will be of this type.
+* **Standard Actions:** Simple commands (`Delay`, `Press`, `Hold`, `Mash`). Useful for non-precise actions, moving to a location for example.
+* **Calibrated Phases:** Blocks used for precise input. They allow you to define a target frame/time, run some setup tasks while the timer counts down, and fire a "Final Trigger" on the target frame. Most of your blocks will be of this type.
 
 ### 2. Hardware Boot Settings
-Located in the collapsible settings panel, these define the automated sequence the ESP32 performs the moment you click "Start":
+Located in the collapsible settings panel, these define the automated sequence the ESP32 performs the moment you click "Start". These are defaulted to work well for Switch 2, but they can be adjusted for the Switch 1:
 
 ![Hardware Boot Settings](images/BootSettings.png)
 
 * **Profile Dialog:** Time needed for the Switch to open the "Who is playing?" screen. If you're the only user, this part can be skipped by unchecking a box.
 * **App Launch Wait:** Time spent between pressing 'A' to select a profile and the game loading. Make it shorter if the game loads before 'HOME' is pressed.
 * **Home Screen Buffer:** Gives time for the game to load in the background.
-*(Note: These are currently hard coded to always occur, but a toggle to add or remove them will be added in a later release.)*
+*(Note: These are currently hard coded to always occur, but a toggle to add or remove them might be added in a later release.)*
 
 ### 3. Profile Management
 * **Save & Sync:** Saves your current timeline locally and pushes it to the ESP32's internal memory. Make sure to press this when you want to move from one device to another.

@@ -85,7 +85,7 @@ Located in the collapsible settings panel, these define the automated sequence t
 Below the timeline is a live virtual gamepad. It uses WebSockets to control the Switch directly from your browser. I included this because no other controller can be used while the ESP32 is the 1st player controller.
 * Desktop users can use their keyboard (Arrow Keys/WASD for D-Pad, Space for A, Shift for B, Enter for X).
 * A controller connected to a desktop can also be used instead of using the web interface, as long as it can be detected by the browser. I've tested both an Xbox controller and a PS5 controller.
-* Mobile users can utilize the touch-optimized D-Pad and Action Diamond. They may also be able to connect a controller, but that is untested.
+* Mobile users can utilize the touch-optimized D-Pad and A/B/X/Y. They may also be able to connect a controller, but that is untested.
 
 
 ---

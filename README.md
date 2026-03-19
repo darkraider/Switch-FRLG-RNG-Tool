@@ -92,9 +92,17 @@ Below the timeline is a live virtual gamepad. It uses WebSockets to control the 
 
 ## ⚠️ Troubleshooting
 
+* **"I can't get my ESP32 connected to my WiFi!"**
+  Most ESP32s only support 2.4Ghz Wi-Fi. If you only have 5Ghz, you'll need to find either another ESP32 that supports 5Ghz, find another router, or change the firmware so that the ESP32 creates its own Wi-Fi network. I may push another branch for that setup sometime in the future.
+* **"I'm not getting the exact same frame every time!**
+  As far as I can tell, this is mostly the Switch/FRLG's fault. Once calibrated, the ESP32 will normally miss by one frame one way or another, even if it presses the buttons at the exact same time every time. Just keep hitting 'Restart' until it finally gets everything right in one run.
+
+The ESP32 is emulating a Switch 1 controller, so it's limited to a 125Hz polling rate from USB. With bad timing, you can miss a +- 1 frame each time from just that.
+* **I docked/undocked my Switch, and it's suddenly not hitting the same frame anymore!**
+  Docking the Switch 1/2 seems to cause a change in loading the game, probably due to the processor being clocked down when in handheld. Unless you want to change your calibration all the time, always hunt with the same configuration, or have a profile for both docked/undocked.  
 * **The Web UI is blank/white on load:** Your local storage JSON may have been corrupted. The code features an auto-recovery system, but if it fails, clear your browser's site data/cache for the ESP32's IP address and refresh.
 * **"COMM ERROR" / WebSocket Disconnected:**
-  Ensure your phone/PC is on the exact same Wi-Fi network (and same 2.4GHz/5GHz band if your router isolates them) as the ESP32.
+  Ensure your phone/PC is on the exact same Wi-Fi network (2.4GHz) as the ESP32.
 * **Switch isn't registering inputs during macros:**
   Ensure the ESP32 is recognized by the Switch as a valid controller in the `Controllers > Change Grip/Order` menu before starting a macro. Furthermore, ensure that it is the 1st player controller. Fire Red and Leaf Green only support inputs from the 1st player controller during play.
 * **Controller becomes unresponsive after a long session:**

@@ -8,10 +8,10 @@ A high-precision, web-controlled macro engine and virtual controller designed fo
 
 ## Key Features
 
-* **Microsecond-Precise:** The ESP32 executes your macro timeline natively. During critical calibration phases, the board enters a 50ms "blackout zone" where it completely ignores network traffic to guarantee a frame-perfect hardware strike.
-* **Virtual Controller:** Uses a dedicated WebSocket server (Port 81) to bypass standard HTTP handshakes, providing instantaneous 1:1 hardware passthrough for manual D-Pad and A/B/X/Y inputs.
-* **"Cloud" Sync:** Macros and profiles are saved directly to the ESP32's onboard SPIFFS memory. Build a timeline on your PC, and it instantly syncs to your phone or tablet when you open the page.
-* **Calibrated Phases:** Build complex sequences with Background Setup Tasks (e.g., holding 'A' to clear dialogue) while a master timer ticks down. Similarly to EonTimer, if you enter the ms/frames you missed by, the tool will adjust its calibration.
+* **Microsecond-Precise:** The ESP32 executes your macro timeline natively. During critical calibration phases, the board enters a 50ms "blackout zone" where it completely ignores network traffic to guarantee a frame-perfect button press.
+* **Virtual Controller:** Uses a dedicated WebSocket server (Port 81) to bypass standard HTTP handshakes, provides passthrough for manual D-Pad and A/B/X/Y inputs.
+* **"Cloud" Sync:** Macros and profiles are saved directly to the ESP32's onboard SPIFFS memory. Build a timeline on your PC, and it will sync to your phone or tablet when you open the page.
+* **Calibrated Phases:** Build complex sequences with Background Setup Tasks while a master timer ticks down. Similarly to EonTimer, if you enter the ms/frames you missed by, the tool will adjust its calibration.
 * **OTA Updates:** Flash new firmware directly from the Arduino IDE over your Wi-Fi network without ever unplugging the ESP32 from your console.
 
 ---
